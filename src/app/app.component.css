@@ -1,0 +1,15 @@
+mat-toolbar {
+    background-color:#F44336;
+}
+
+.application-brand {
+    color:white;
+    font-weight: bold;
+}
+
+button {
+    color:White;
+    margin-left:1em;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+}
