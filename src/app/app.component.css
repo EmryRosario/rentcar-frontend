@@ -10,6 +10,17 @@ mat-toolbar {
 button {
     color:White;
     margin-left:1em;
-    border-left: 4px solid white;
-    border-right: 4px solid white;
+    font-weight: bold;
+    
+}
+
+button:hover {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.end {
+    display: flex;
+    justify-content: flex-end;
+    width:100%;
 }
