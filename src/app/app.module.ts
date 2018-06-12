@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import {appRoutes} from './app-routes';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AlertModule } from 'ngx-alerts';
 
 import {
   MatToolbarModule,  
@@ -12,16 +13,32 @@ import {
   MatIconModule,
   MatCardModule,
   MatTableModule,
-  MatMenuModule
+  MatMenuModule,
+  MAT_DIALOG_DEFAULT_OPTIONS,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FuelComponent } from './pages/fuel/fuel.component';
 import { FuelService } from './services/fuel/fuel.service';
+import { CreateComponent as CreateFuelComponent } from './pages/fuel/create/create.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { EditComponent as EditFuelComponent } from './pages/fuel/edit/edit.component';
+import { SeeComponent as SeeFuelComponent } from './pages/fuel/see/see.component';
+import { FormatDatePipe } from './pipes/format-date.pipe';
+import { DeleteComponent as DeleteFuelComponent } from './pages/fuel/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FuelComponent
+    FuelComponent,
+    CreateFuelComponent,
+    EditFuelComponent,
+    SeeFuelComponent,
+    FormatDatePipe,
+    DeleteFuelComponent
   ],
   imports: [
     BrowserModule,
@@ -33,13 +50,29 @@ import { FuelService } from './services/fuel/fuel.service';
     MatCardModule,
     MatTableModule,
     MatMenuModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000}),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserAnimationsModule
   ],
-  providers: [FuelService],
-  bootstrap: [AppComponent]
+  providers: [
+    FuelService,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    FormatDatePipe
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [CreateFuelComponent, 
+    EditFuelComponent, 
+    SeeFuelComponent, 
+    DeleteFuelComponent
+  ]
 })
 export class AppModule { }

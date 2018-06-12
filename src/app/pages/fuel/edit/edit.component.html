@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Editar Combustible</h2>
+
+<mat-dialog-content>
+  <form class="edit-fuel">
+    <mat-form-field>
+      <input  class="edit-fuel-input" [(ngModel)]="fuel.description" name="description"  matInput placeholder="Descripcion" value="" required>
+    </mat-form-field>
+
+    <mat-select placeholder="Estado" [(ngModel)]="fuel.state" name="state">
+      <mat-option *ngFor="let state of [{name: 'Activo'}, {name: 'Inactivo'}]" [value]="state.name" required>
+        {{ state.name }}
+      </mat-option>
+    </mat-select>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="edit-fuel-footer">
+    <button class="edit-fuel" class="mat-raised-button" (click)="save($event)">Aceptar</button>
+</mat-dialog-actions>
+  

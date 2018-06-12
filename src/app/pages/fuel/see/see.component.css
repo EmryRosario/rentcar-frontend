@@ -1,0 +1,19 @@
+.see-fuel-input {
+    width:100%;
+}
+form.see-fuel mat-form-field {
+    width:100%;
+}
+.see-fuel-footer {
+    display:flex;
+    justify-content: flex-end;
+}
+
+
+button{
+    background-color:#01579b;
+    color:#fafafa;
+    font-weight:bold;
+    text-transform: uppercase;
+    
+}

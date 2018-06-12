@@ -1,0 +1,19 @@
+.delete-fuel-input {
+    width:100%;
+}
+form.delete-fuel mat-form-field {
+    width:100%;
+}
+.delete-fuel-footer {
+    display:flex;
+    justify-content: flex-end;
+}
+
+
+button{
+    background-color:#01579b;
+    color:#fafafa;
+    font-weight:bold;
+    text-transform: uppercase;
+    
+}

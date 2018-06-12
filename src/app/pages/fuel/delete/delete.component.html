@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Eliminar Combustible</h2>
+
+<mat-dialog-content>
+  <form class="delete-fuel">
+    <mat-form-field>
+      <input  class="delete-fuel-input" [readonly]="true" [(ngModel)]="fuel._id" name="code"  matInput placeholder="ID" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="delete-fuel-input" [readonly]="true" [(ngModel)]="fuel.description" name="description"  matInput placeholder="Descripcion" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="delete-fuel-input" [readonly]="true" [(ngModel)]="fuel.state" name="state"  matInput placeholder="Estado">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input class="delete-fuel-input" [readonly]="true" [ngModel]="fuel.date | formatDate" name="date"  matInput placeholder="Fecha" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="delete-fuel-input" [readonly]="true" [(ngModel)]="fuel.employee.name" name="employee"  matInput placeholder="Creado Por" >
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="delete-fuel-footer">
+    <button class="delete-fuel" class="mat-raised-button" (click)="save($event)">Eliminar</button>
+</mat-dialog-actions>
+  
