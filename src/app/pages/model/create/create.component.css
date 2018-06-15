@@ -1,10 +1,10 @@
-.create-brand-input {
+.create-model-input {
     width:100%;
 }
-form.create-brand mat-form-field {
+form.create-model mat-form-field {
     width:100%;
 }
-.create-brand-footer {
+.create-model-footer {
     display:flex;
     justify-content: flex-end;
 }

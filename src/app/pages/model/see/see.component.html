@@ -1,29 +1,29 @@
 <h2 mat-dialog-title></h2>
 <mat-dialog-content>
-  <form class="see-brand">
+  <form class="see-model">
     <mat-form-field>
-      <input  class="see-brand-input" [readonly]="true" [(ngModel)]="brand._id" name="code"  matInput placeholder="ID" >
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="model._id" name="code"  matInput placeholder="ID" >
     </mat-form-field>
 
     <mat-form-field>
-      <input  class="see-brand-input" [readonly]="true" [(ngModel)]="brand.description" name="description"  matInput placeholder="Descripcion" >
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="model.description" name="description"  matInput placeholder="Descripcion" >
     </mat-form-field>
 
     <mat-form-field>
-      <input  class="see-brand-input" [readonly]="true" [(ngModel)]="brand.state" name="state"  matInput placeholder="Estado">
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="model.state" name="state"  matInput placeholder="Estado">
     </mat-form-field>
 
     <mat-form-field>
-      <input class="see-brand-input" [readonly]="true" [ngModel]="brand.date | formatDate" name="date"  matInput placeholder="Fecha" >
+      <input class="see-model-input" [readonly]="true" [ngModel]="model.date | formatDate" name="date"  matInput placeholder="Fecha" >
     </mat-form-field>
 
     <mat-form-field>
-      <input  class="see-brand-input" [readonly]="true" [(ngModel)]="brand.employee.name" name="employee"  matInput placeholder="Creado Por" >
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="model.employee.name" name="employee"  matInput placeholder="Creado Por" >
     </mat-form-field>
   </form>
 </mat-dialog-content>
 
-<mat-dialog-actions class="see-brand-footer">
-    <button class="see-brand" class="mat-raised-button" (click)="close($event)">Aceptar</button>
+<mat-dialog-actions class="see-model-footer">
+    <button class="see-model" class="mat-raised-button" (click)="close($event)">Aceptar</button>
 </mat-dialog-actions>
   

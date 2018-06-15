@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  brand = {
+  model = {
     description: '',
     state: 'Activo'
  };
@@ -28,6 +28,6 @@ export class CreateComponent implements OnInit {
   }
   save (event) {
     event.preventDefault();
-    this.dialogRef.close({data: this.brand});
+    this.dialogRef.close({data: this.model});
   }
 }

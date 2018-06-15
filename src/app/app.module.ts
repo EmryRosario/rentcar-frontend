@@ -39,6 +39,12 @@ import { EditComponent as EditBrandComponent } from './pages/brand/edit/edit.com
 import { SeeComponent as SeeBrandComponent } from './pages/brand/see/see.component';
 import { DeleteComponent as DeleteBrandComponent } from './pages/brand/delete/delete.component';
 
+import { ModelComponent } from './pages/model/model.component';
+import { CreateComponent as CreateModelComponent } from './pages/model/create/create.component'
+import { EditComponent as EditModelComponent } from './pages/model/edit/edit.component';
+import { SeeComponent as SeeModelComponent } from './pages/model/see/see.component';
+import { DeleteComponent as DeleteModelComponent } from './pages/model/delete/delete.component';
+
 ;@NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +58,12 @@ import { DeleteComponent as DeleteBrandComponent } from './pages/brand/delete/de
     CreateBrandComponent,
     EditBrandComponent,
     SeeBrandComponent,
-    DeleteBrandComponent
+    DeleteBrandComponent,
+    ModelComponent,
+    CreateModelComponent,
+    EditModelComponent,
+    SeeModelComponent,
+    DeleteModelComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +105,12 @@ import { DeleteComponent as DeleteBrandComponent } from './pages/brand/delete/de
     CreateBrandComponent,
     EditBrandComponent,
     SeeBrandComponent,
-    DeleteBrandComponent
+    DeleteBrandComponent,
+    ModelComponent,
+    CreateModelComponent,
+    EditModelComponent,
+    SeeModelComponent,
+    DeleteModelComponent
   ]
 })
 export class AppModule { }

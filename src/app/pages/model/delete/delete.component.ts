@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { BrandService } from '../../../services/brand/brand.service';
+import { ModelService } from '../../../services/model/model.service';
 import { AlertService } from 'ngx-alerts';
 
 @Component({
@@ -9,11 +9,11 @@ import { AlertService } from 'ngx-alerts';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
-  brand = {};
+  model = {};
   constructor(public dialogRef: MatDialogRef<DeleteComponent>,
-     @Inject(MAT_DIALOG_DATA) public data: any, private brandApi: BrandService,
+     @Inject(MAT_DIALOG_DATA) public data: any, private modelApi: ModelService,
      private alertService: AlertService) {
-       this.brand = data.brand;
+       this.model = data.model;
       }
 
   ngOnInit() {
@@ -21,11 +21,11 @@ export class DeleteComponent implements OnInit {
 
   save (event) {
     event.preventDefault();
-    if (this.brand) {
-      this.brandApi.delete(this.brand)
+    if (this.model) {
+      this.modelApi.delete(this.model)
       .then(() => this.alertService.success('Eliminado correctamente...'))
       .catch(() => this.alertService.danger('Ha ocurrido un error!'))
     }
-    this.dialogRef.close({data: this.brand});
+    this.dialogRef.close({data: this.model});
   }
 }

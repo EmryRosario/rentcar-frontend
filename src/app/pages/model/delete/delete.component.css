@@ -1,10 +1,10 @@
-.delete-brand-input {
+.delete-model-input {
     width:100%;
 }
-form.delete-brand mat-form-field {
+form.delete-model mat-form-field {
     width:100%;
 }
-.delete-brand-footer {
+.delete-model-footer {
     display:flex;
     justify-content: flex-end;
 }

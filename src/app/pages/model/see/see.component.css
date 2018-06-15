@@ -1,10 +1,10 @@
-.see-brand-input {
+.see-model-input {
     width:100%;
 }
-form.see-brand mat-form-field {
+form.see-model mat-form-field {
     width:100%;
 }
-.see-brand-footer {
+.see-model-footer {
     display:flex;
     justify-content: flex-end;
 }

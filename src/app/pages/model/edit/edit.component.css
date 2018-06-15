@@ -1,10 +1,10 @@
-.edit-brand-input {
+.edit-model-input {
     width:100%;
 }
-form.edit-brand mat-form-field {
+form.edit-model mat-form-field {
     width:100%;
 }
-.edit-brand-footer {
+.edit-model-footer {
     display:flex;
     justify-content: flex-end;
 }

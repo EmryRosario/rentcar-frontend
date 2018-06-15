@@ -1,12 +1,12 @@
-<h2 mat-dialog-title>Crear Nueva Marca de Vehiculo</h2>
+<h2 mat-dialog-title>Crear Nuevo Modelo de Vehiculo</h2>
 
 <mat-dialog-content>
-  <form class="create-brand">
+  <form class="create-model">
     <mat-form-field>
-      <input  class="create-brand-input" [(ngModel)]="brand.description" name="description"  matInput placeholder="Descripcion" value="" required>
+      <input  class="create-model-input" [(ngModel)]="model.description" name="description"  matInput placeholder="Descripcion" value="" required>
     </mat-form-field>
 
-    <mat-select placeholder="Estado" [(ngModel)]="brand.state" name="state">
+    <mat-select placeholder="Estado" [(ngModel)]="model.state" name="state">
       <mat-option *ngFor="let state of [{name: 'Activo'}, {name: 'Inactivo'}]" [value]="state.name" required>
         {{ state.name }}
       </mat-option>
@@ -14,7 +14,7 @@
   </form>
 </mat-dialog-content>
 
-<mat-dialog-actions class="create-brand-footer">
-    <button class="create-brand" class="mat-raised-button" (click)="save($event)">Aceptar</button>
+<mat-dialog-actions class="create-model-footer">
+    <button class="create-model" class="mat-raised-button" (click)="save($event)">Aceptar</button>
 </mat-dialog-actions>
   

@@ -9,11 +9,11 @@ import { FormatDatePipe } from '../../../pipes/format-date.pipe';
   styleUrls: ['./see.component.css']
 })
 export class SeeComponent implements OnInit {
-  brand = {};
+  model = {};
   constructor(public dialogRef: MatDialogRef<SeeComponent>,
      @Inject(MAT_DIALOG_DATA) public data: any,
      private alertService: AlertService, private formatDate: FormatDatePipe) {
-       this.brand = data.brand;
+       this.model = data.model;
       }
 
   ngOnInit() {

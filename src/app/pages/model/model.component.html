@@ -2,15 +2,15 @@
   <button mat-menu-item (click)="see($event)" class="view-button mat-menu-option">
     <i class="material-icons">remove_red_eye</i>
   </button>
-  <button mat-menu-item class="edit-button mat-menu-option" (click)="editbrand($event)">
+  <button mat-menu-item class="edit-button mat-menu-option" (click)="editModel($event)">
     <i class="material-icons"> edit</i>
   </button>
-  <button (click)="deletebrand($event)" mat-menu-item class="remove-button mat-menu-option">
+  <button (click)="deleteModel($event)" mat-menu-item class="remove-button mat-menu-option">
     <i class="material-icons">remove</i>
   </button>
 </mat-menu>
 <div class="header">
-  <button mat-button (click)="createNewbrand()">
+  <button mat-button (click)="createNewModel()">
     <i class="material-icons">
       add
     </i>

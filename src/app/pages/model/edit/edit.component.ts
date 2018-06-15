@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { BrandService } from '../../../services/brand/brand.service';
+import { ModelService } from '../../../services/model/model.service';
 import { AlertService } from 'ngx-alerts';
 
 @Component({
@@ -9,11 +9,11 @@ import { AlertService } from 'ngx-alerts';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  brand = {};
+  model = {};
   constructor(public dialogRef: MatDialogRef<EditComponent>,
-     @Inject(MAT_DIALOG_DATA) public data: any, private brandApi: BrandService,
+     @Inject(MAT_DIALOG_DATA) public data: any, private modelApi: ModelService,
      private alertService: AlertService) {
-       this.brand = data.brand;
+       this.model = data.model;
       }
 
   ngOnInit() {
@@ -21,8 +21,8 @@ export class EditComponent implements OnInit {
 
   save (event) {
     event.preventDefault();
-    if (this.brand) {
-      this.brandApi.edit(this.brand)
+    if (this.model) {
+      this.modelApi.edit(this.model)
       .then(() => this.alertService.success('Guardado correctamente...'))
       .catch(() => this.alertService.danger('Ha ocurrido un error'))
       // alert('Combustible guardado correctamente.');

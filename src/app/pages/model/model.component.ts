@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { BrandService } from '../../services/brand/brand.service';
+import { ModelService } from '../../services/model/model.service';
 import { MatTableDataSource, MatSort, MatMenuTrigger } from '@angular/material';
 import {
   MatDialog,
@@ -12,36 +12,36 @@ import { DeleteComponent } from './delete/delete.component';
 import { AlertService } from 'ngx-alerts';
 
 @Component({
-  selector: 'page-brand',
-  templateUrl: './brand.component.html',
-  styleUrls: ['./brand.component.css']
+  selector: 'page-model',
+  templateUrl: './model.component.html',
+  styleUrls: ['./model.component.css']
 })
-export class BrandComponent implements OnInit {
+export class ModelComponent implements OnInit {
   @ViewChild(MatMenuTrigger) appMenu: MatMenuTrigger;
   columns = ['Codigo', 'Descripcion', 'Estado', 'Creado', 'Fecha', 'operations']  
   dataSource;
-  brand: {};
-  brands: any = [];
+  model: {};
+  models: any = [];
   @ViewChild(MatSort) sort: MatSort;
-  currentbrand;
+  currentmodel;
   modalWidth: any = document.getElementsByTagName('body')[0].clientWidth * 0.7; 
   modalHeight: any = document.getElementsByTagName('body')[0].clientHeight * 0.7; 
-  constructor(private brandApi: BrandService, private dialog: MatDialog, private alertService: AlertService) {
-    this.setbrands();
+  constructor(private modelApi: ModelService, private dialog: MatDialog, private alertService: AlertService) {
+    this.setModels();
   }
   ngOnInit() {
     
   }
-  setbrands () {
-    this.brandApi.getAllBrands()
+  setModels () {
+    this.modelApi.getAllModels()
     .then(f => {
-      this.brands = f;
-      this.brands = this.brands.filter(f => f.state != 'Eliminado')
-      this.brands = this.brands.map (f => {
+      this.models = f;
+      this.models = this.models.filter(f => f.state != 'Eliminado')
+      this.models = this.models.map (f => {
         if (!f.employee) f.employee = { name: ' '};
         return f;
       })
-      this.dataSource = new MatTableDataSource(this.brands as any) 
+      this.dataSource = new MatTableDataSource(this.models as any) 
       this.dataSource.sort = this.sort;
     })
     .catch(f => console.error(f))
@@ -56,50 +56,53 @@ export class BrandComponent implements OnInit {
 
     return `${day}/${month}/${year}`;
   }
-  optionsClick (brand) {
-    console.log(brand);
-    this.brand = brand;   
+  optionsClick (model) {
+    console.log(model);
+    this.model = model;   
   }
 
-  createNewbrand() {
+  createNewModel() {
     const dialogConfig = new MatDialogConfig();
     // dialogConfig.data = {some: 'some data'};
     dialogConfig.width = this.modalWidth;
     let dialogRef = this.dialog.open(CreateComponent, dialogConfig);
-    dialogRef.afterClosed().subscribe(brand => {
-      if (brand) {
-        this.brandApi.save(brand.data)
+    dialogRef.afterClosed().subscribe(model => {
+      if (model) {
+        this.modelApi.save(model.data)
         .then(() => {
           this.alertService.success('Guardado correctamente...');
-          this.setbrands();
+          this.setModels();
         })
-        .catch(() => this.alertService.success('Vaya, ha ocurrido un error!'));
+        .catch((e) => {
+          console.log(e)
+          this.alertService.success('Vaya, ha ocurrido un error!')
+        });
       }
     });
   }
 
-  editbrand (event) {
+  editModel (event) {
     event.preventDefault();
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = this.modalWidth;
     dialogConfig.data = {
-      brand: this.brand
+      model: this.model
     }
     let dialogRef = this.dialog.open(EditComponent, dialogConfig,);
     
   }
-  deletebrand (event) {
+  deleteModel (event) {
     event.preventDefault();
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = this.modalWidth;
     dialogConfig.data = {
-      brand: this.brand
+      model: this.model
     }
     let dialogRef = this.dialog.open(DeleteComponent, dialogConfig,);
 
-    dialogRef.afterClosed().subscribe(brand => {
-      if (brand.data) {
-       this.setbrands();
+    dialogRef.afterClosed().subscribe(model => {
+      if (model.data) {
+       this.setModels();
       }
     });
    
@@ -110,7 +113,7 @@ export class BrandComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = this.modalWidth;
     dialogConfig.data = {
-      brand: this.brand
+      model: this.model
     }
     let dialogRef = this.dialog.open(SeeComponent, dialogConfig,);
   }
