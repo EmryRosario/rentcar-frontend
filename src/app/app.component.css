@@ -14,7 +14,36 @@ button {
     font-weight: bold;
     
 }
-
+.login-form {
+    display:flex;
+    flex-direction: column;
+    width:100%;
+}
+.login-image {
+    height:150px;
+    width:150px;
+    margin-right:3em;
+}
+.login-button {
+    text-transform: uppercase;
+    background-color:#01579b;
+    padding: 0;
+    margin:0;
+}
+.login-box {
+    display:flex;
+    justify-content: center;
+    width:60%;
+    padding-top:5em;
+    padding-bottom:5em;
+}
+.logout-container{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 button:hover {
     border-left: 2px solid white;
     border-right: 2px solid white;

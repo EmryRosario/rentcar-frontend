@@ -29,8 +29,17 @@ import { EditComponent as EditFuelComponent } from './pages/fuel/edit/edit.compo
 import { SeeComponent as SeeFuelComponent } from './pages/fuel/see/see.component';
 import { FormatDatePipe } from './pipes/format-date.pipe';
 import { DeleteComponent as DeleteFuelComponent } from './pages/fuel/delete/delete.component';
+import { AuthService } from './services/auth/auth.service';
+import { SessionGuardService } from './session-guard.service';
+import { BrandService } from './services/brand/brand.service';
 
-@NgModule({
+import { BrandComponent } from './pages/brand/brand.component';
+import { CreateComponent as CreateBrandComponent } from './pages/brand/create/create.component'
+import { EditComponent as EditBrandComponent } from './pages/brand/edit/edit.component';
+import { SeeComponent as SeeBrandComponent } from './pages/brand/see/see.component';
+import { DeleteComponent as DeleteBrandComponent } from './pages/brand/delete/delete.component';
+
+;@NgModule({
   declarations: [
     AppComponent,
     FuelComponent,
@@ -38,7 +47,12 @@ import { DeleteComponent as DeleteFuelComponent } from './pages/fuel/delete/dele
     EditFuelComponent,
     SeeFuelComponent,
     FormatDatePipe,
-    DeleteFuelComponent
+    DeleteFuelComponent,
+    BrandComponent,
+    CreateBrandComponent,
+    EditBrandComponent,
+    SeeBrandComponent,
+    DeleteBrandComponent
   ],
   imports: [
     BrowserModule,
@@ -65,14 +79,22 @@ import { DeleteComponent as DeleteFuelComponent } from './pages/fuel/delete/dele
   ],
   providers: [
     FuelService,
+    BrandService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
-    FormatDatePipe
+    FormatDatePipe,
+    AuthService,
+    SessionGuardService
   ],
   bootstrap: [AppComponent],
   entryComponents: [CreateFuelComponent, 
     EditFuelComponent, 
     SeeFuelComponent, 
-    DeleteFuelComponent
+    DeleteFuelComponent,
+    BrandComponent,
+    CreateBrandComponent,
+    EditBrandComponent,
+    SeeBrandComponent,
+    DeleteBrandComponent
   ]
 })
 export class AppModule { }

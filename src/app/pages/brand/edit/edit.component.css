@@ -1,0 +1,19 @@
+.edit-brand-input {
+    width:100%;
+}
+form.edit-brand mat-form-field {
+    width:100%;
+}
+.edit-brand-footer {
+    display:flex;
+    justify-content: flex-end;
+}
+
+
+button{
+    background-color:#01579b;
+    color:#fafafa;
+    font-weight:bold;
+    text-transform: uppercase;
+    
+}

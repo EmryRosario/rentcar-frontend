@@ -1,10 +1,30 @@
 <mat-toolbar>
   <span class="application-brand">Emry's RentCar</span>
-  <button mat-button>Inicio</button>
-  <button routerLink="/combustibles" routerLinkActive="active" mat-button>Combustibles</button>
-  <div class="end">
-    <button mat-button>Iniciar sesión</button>
+  <div *ngIf="logged">
+    <button mat-button>Inicio</button>
+    <button routerLink="/combustibles" routerLinkActive="active" mat-button>Combustibles</button>
+    <button routerLink="/vehiculo-marca" routerLinkActive="active" mat-button>Vehiculo Marcas</button>
+  </div>
+  <div  class="end">
+    <button *ngIf="!logged" mat-button>Iniciar sesión</button>
+    <button *ngIf="logged" (click)="logout()" mat-button>Cerrar sesión</button>
   </div>
 </mat-toolbar>
 <ngx-alerts></ngx-alerts>
 <router-outlet></router-outlet>
+
+<section *ngIf="!logged" class="logout-container"  >
+  <mat-card class="login-box">
+    <img src="../assets/login.png" class="login-image" >
+    <form class="login-form">
+      <mat-form-field>
+        <input  class="" [(ngModel)]="user.username" name="user"  matInput placeholder="Usuario" required>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input type="password"  class="" [(ngModel)]="user.password" name="password"  matInput placeholder="Contraseña" required>
+      </mat-form-field>
+      <button class="login-button" (click)="login($event)"  mat-button>Ingresar</button>
+    </form>
+  </mat-card>
+</section>

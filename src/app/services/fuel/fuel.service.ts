@@ -24,7 +24,8 @@ export class FuelService {
   save(fuel) {
     return new Promise ((resolve, reject) => {
       let request = this.http.post(`${environment.api}/fuel-type`,{
-        fuelType: fuel
+        fuelType: fuel,
+        token: localStorage._t
       })
       .subscribe(saved => {
         resolve(saved)

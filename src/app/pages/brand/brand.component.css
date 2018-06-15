@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+}
+
+.mat-menu-option {
+    display:flex;
+    justify-content: center;
+}
+
+.view-button {
+    color:#43a047;
+}
+.edit-button {
+    color:#eeff41;
+}
+.remove-button {
+    color:#e65100;
+}
+.header {
+    display:flex;
+    width: 100%;
+    justify-content: flex-end;  
+}
+.header button{
+    background-color:#01579b;
+    color:#fafafa;
+    margin-bottom:10px;
+    font-weight:bold;
+    text-transform: uppercase;
+}
