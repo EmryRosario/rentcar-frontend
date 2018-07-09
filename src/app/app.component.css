@@ -1,5 +1,5 @@
 mat-toolbar {
-    background-color:#01579b;
+    background-color:#01579b!important;
     margin-bottom:3em;
 }
 
@@ -12,7 +12,16 @@ button {
     color:White;
     margin-left:1em;
     font-weight: bold;
+    background-color:#01579b;
     
+}
+::ng-deep .mat-menu-content {
+    background-color:#01579b!important;
+    display:flex!important;
+    flex-direction: column!important;
+}
+::ng-deep .mat-menu-content button {
+    margin:0;
 }
 .login-form {
     display:flex;

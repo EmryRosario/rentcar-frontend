@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Crear Nuevo Cliente</h2>
+
+<mat-dialog-content>
+  <form class="create-customer">
+    <mat-form-field>
+      <input  class="create-customer-input" [(ngModel)]="customer.name" name="name"  matInput placeholder="Nombre" value="" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="create-customer-input" type="number" [(ngModel)]="customer.cedula" name="cedula"  matInput placeholder="Cédula" value="" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="create-customer-input" type="number" [(ngModel)]="customer.creditCard" name="creaditCard"  matInput placeholder="Tarjeta de Credito" value="" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="create-customer-input" type="number" [(ngModel)]="customer.creditLimit" name="creditLimit"  matInput placeholder="Limite de Credito" value="" required>
+    </mat-form-field>
+
+    <mat-select placeholder="Tipo" [(ngModel)]="customer.peopleType" name="type">
+      <mat-option *ngFor="let type of [{name: 'Fisica'}, {name: 'Juridica'}]" [value]="type.name" required>
+        {{ type.name }}
+      </mat-option>
+    </mat-select>
+
+    <mat-select placeholder="Estado" [(ngModel)]="customer.state" name="state">
+      <mat-option *ngFor="let state of [{name: 'Activo'}, {name: 'Inactivo'}]" [value]="state.name" required>
+        {{ state.name }}
+      </mat-option>
+    </mat-select>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="create-customer-footer">
+    <button class="create-customer" class="mat-raised-button" (click)="save($event)">Aceptar</button>
+</mat-dialog-actions>
+  

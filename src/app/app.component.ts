@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'app';
@@ -30,7 +30,7 @@ export class AppComponent {
   }
   
   login (event) {
-    debugger
+    
     if (event) event.preventDefault();
     this.auth.authenticate(this.user)
     .then((user) => {

@@ -1,0 +1,45 @@
+<h2 mat-dialog-title></h2>
+<mat-dialog-content>
+  <form class="see-model">
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer._id" name="code"  matInput placeholder="ID" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer.name" name="name"  matInput placeholder="Nombre" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer.cedula" name="cedula"  matInput placeholder="Cedula" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer.creditCard" name="creditCard"  matInput placeholder="Tarjeta de Credito" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer.creditLimit['$numberDecimal']" name="creditLimit"  matInput placeholder="Limite de Credito" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer.peopleType" name="peopleType"  matInput placeholder="Tipo" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer.state" name="state"  matInput placeholder="Estado">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input class="see-model-input" [readonly]="true" [ngModel]="customer.date | formatDate" name="date"  matInput placeholder="Fecha" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-model-input" [readonly]="true" [(ngModel)]="customer.employee.name" name="employee"  matInput placeholder="Creado Por" >
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="see-model-footer">
+  <button class="see-model" class="mat-raised-button" (click)="close($event)">Aceptar</button>
+</mat-dialog-actions>
+  

@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>Crear Nuevo vehicleo de Vehiculo</h2>
+
+<mat-dialog-content>
+  <form class="create-vehicle">
+    <mat-form-field>
+      <input  class="create-vehicle-input" [(ngModel)]="vehicle.description" name="description"  matInput placeholder="Descripcion" value="" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="create-vehicle-input" [(ngModel)]="vehicle.chasis" name="chasis"  matInput placeholder="Chasis" value="" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="create-vehicle-input" [(ngModel)]="vehicle.engine" name="engine"  matInput placeholder="Motor" value="" required>
+    </mat-form-field>
+
+    <mat-select class="create-vehicle-input" placeholder="Tipo de Vehiculo" [(ngModel)]="vehicle.vehicleType" name="vehicleType">
+      <mat-option *ngFor="let vehicleType of vehicleTypes" [value]="vehicleType._id" required>
+        {{ vehicleType.description }}
+      </mat-option>
+    </mat-select>
+
+    <mat-form-field>
+      <input  class="create-vehicle-input" [(ngModel)]="vehicle.color" name="color"  matInput placeholder="Color" value="" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input  class="create-vehicle-input" [(ngModel)]="vehicle.placa" name="placa"  matInput placeholder="Placa" value="" required>
+    </mat-form-field>
+
+    <mat-select placeholder="Marca" [(ngModel)]="vehicle.brand" name="brand">
+      <mat-option *ngFor="let brand of brands" [value]="brand._id" required>
+        {{ brand.description }}
+      </mat-option>
+    </mat-select>
+
+    
+
+    <mat-select placeholder="Modelo" [(ngModel)]="vehicle.model" name="model">
+      <mat-option *ngFor="let model of models" [value]="model._id" required>
+        {{ model.description }}
+      </mat-option>
+    </mat-select>
+
+    <mat-select placeholder="Combustible" [(ngModel)]="vehicle.fuel" name="fuel">
+      <mat-option *ngFor="let fuel of fuels" [value]="fuel._id" required>
+        {{ fuel.description }}
+      </mat-option>
+    </mat-select>
+
+    <mat-select placeholder="Estado" [(ngModel)]="vehicle.state" name="state">
+      <mat-option *ngFor="let state of [{name: 'Activo'}, {name: 'Inactivo'}]" [value]="state.name" required>
+        {{ state.name }}
+      </mat-option>
+    </mat-select>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="create-vehicle-footer">
+    <button class="create-vehicle" class="mat-raised-button" (click)="save($event)">Aceptar</button>
+</mat-dialog-actions>
+  

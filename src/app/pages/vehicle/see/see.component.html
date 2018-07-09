@@ -1,0 +1,53 @@
+<h2 mat-dialog-title></h2>
+<mat-dialog-content>
+  <form class="see-vehicle">
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle._id" name="code"  matInput placeholder="ID" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.description" name="description"  matInput placeholder="Descripcion" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.placa" name="placa"  matInput placeholder="Placa">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.brand.description" name="brand"  matInput placeholder="Marca">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.model.description" name="model"  matInput placeholder="Modelo">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.color" name="color"  matInput placeholder="Color">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.vehicleType.description" name="vehicleType"  matInput placeholder="Tipo de Vehiculo">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.fuel.description" name="fuel"  matInput placeholder="Combustible">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.state" name="state"  matInput placeholder="Estado">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input class="see-vehicle-input" [readonly]="true" [ngModel]="vehicle.date | formatDate" name="date"  matInput placeholder="Fecha" >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  class="see-vehicle-input" [readonly]="true" [(ngModel)]="vehicle.employee.name" name="employee"  matInput placeholder="Creado Por" >
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="see-vehicle-footer">
+    <button class="see-vehicle" class="mat-raised-button" (click)="close($event)">Aceptar</button>
+</mat-dialog-actions>
+  

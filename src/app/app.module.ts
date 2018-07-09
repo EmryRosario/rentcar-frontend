@@ -45,6 +45,26 @@ import { EditComponent as EditModelComponent } from './pages/model/edit/edit.com
 import { SeeComponent as SeeModelComponent } from './pages/model/see/see.component';
 import { DeleteComponent as DeleteModelComponent } from './pages/model/delete/delete.component';
 
+import { VehicleComponent } from './pages/vehicle/vehicle.component';
+import { CreateComponent as CreateVehicleComponent } from './pages/vehicle/create/create.component'
+import { EditComponent as EditVehicleComponent } from './pages/vehicle/edit/edit.component';
+import { SeeComponent as SeeVehicleComponent } from './pages/vehicle/see/see.component';
+import { DeleteComponent as DeleteVehicleComponent } from './pages/vehicle/delete/delete.component';
+
+import { VehicleTypeComponent } from './pages/vehicle-type/vehicle-type.component';
+import { CreateComponent as CreateVehicleTypeComponent } from './pages/vehicle-type/create/create.component'
+import { EditComponent as EditVehicleTypeComponent } from './pages/vehicle-type/edit/edit.component';
+import { SeeComponent as SeeVehicleTypeComponent } from './pages/vehicle-type/see/see.component';
+import { DeleteComponent as DeleteVehicleTypeComponent } from './pages/vehicle-type/delete/delete.component';
+
+import { CheckEmptyPipe } from './pipes/check-empty.pipe';
+
+import { CustomerComponent } from './pages/customer/customer.component';
+import { CreateComponent as CreateCustomerComponent } from './pages/customer/create/create.component'
+import { EditComponent as EditCustomerComponent } from './pages/customer/edit/edit.component';
+import { SeeComponent as SeeCustomerComponent } from './pages/customer/see/see.component';
+import { DeleteComponent as DeleteCustomerComponent } from './pages/customer/delete/delete.component';
+
 ;@NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +83,23 @@ import { DeleteComponent as DeleteModelComponent } from './pages/model/delete/de
     CreateModelComponent,
     EditModelComponent,
     SeeModelComponent,
-    DeleteModelComponent
+    DeleteModelComponent,
+    VehicleComponent,
+    CreateVehicleComponent,
+    EditVehicleComponent,
+    SeeVehicleComponent,
+    DeleteVehicleComponent,
+    VehicleTypeComponent,
+    CreateVehicleTypeComponent,
+    EditVehicleTypeComponent,
+    SeeVehicleTypeComponent,
+    DeleteVehicleTypeComponent,
+    CustomerComponent,
+    CreateCustomerComponent,
+    EditCustomerComponent,
+    SeeCustomerComponent,
+    DeleteCustomerComponent,
+    CheckEmptyPipe
   ],
   imports: [
     BrowserModule,
@@ -110,7 +146,22 @@ import { DeleteComponent as DeleteModelComponent } from './pages/model/delete/de
     CreateModelComponent,
     EditModelComponent,
     SeeModelComponent,
-    DeleteModelComponent
+    DeleteModelComponent,
+    VehicleComponent,
+    CreateVehicleComponent,
+    EditVehicleComponent,
+    SeeVehicleComponent,
+    DeleteVehicleComponent,
+    VehicleTypeComponent,
+    CreateVehicleTypeComponent,
+    EditVehicleTypeComponent,
+    SeeVehicleTypeComponent,
+    DeleteVehicleTypeComponent,
+    CustomerComponent,
+    CreateCustomerComponent,
+    EditCustomerComponent,
+    SeeCustomerComponent,
+    DeleteCustomerComponent
   ]
 })
 export class AppModule { }

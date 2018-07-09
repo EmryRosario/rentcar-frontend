@@ -1,0 +1,19 @@
+.delete-vehicle-input {
+    width:100%;
+}
+form.delete-vehicle mat-form-field {
+    width:100%;
+}
+.delete-vehicle-footer {
+    display:flex;
+    justify-content: flex-end;
+}
+
+
+button{
+    background-color:#01579b;
+    color:#fafafa;
+    font-weight:bold;
+    text-transform: uppercase;
+    
+}

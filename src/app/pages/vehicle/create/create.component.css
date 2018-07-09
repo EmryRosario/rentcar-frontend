@@ -1,0 +1,24 @@
+.create-vehicle-input {
+    width:100%;
+}
+form.create-vehicle mat-form-field {
+    width:100%;
+}
+.create-vehicle-footer {
+    display:flex;
+    justify-content: flex-end;
+}
+
+
+button{
+    background-color:#01579b;
+    color:#fafafa;
+    font-weight:bold;
+    text-transform: uppercase;
+    
+}
+
+mat-select {
+    margin-top:1em;
+    margin-bottom:5px;
+}

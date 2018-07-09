@@ -1,10 +1,23 @@
 <mat-toolbar>
   <span class="application-brand">Emry's RentCar</span>
   <div *ngIf="logged">
-    <button mat-button>Inicio</button>
-    <button routerLink="/combustibles" routerLinkActive="active" mat-button>Combustibles</button>
-    <button routerLink="/vehiculo-marca" routerLinkActive="active" mat-button>Vehiculo Marcas</button>
-    <button routerLink="/vehiculo-modelo" routerLinkActive="active" mat-button>Vehiculo Modelos</button>
+    <!-- <button mat-button>Inicio</button> -->
+    <button mat-button [matMenuTriggerFor]="menu" >Vehiculos</button>
+    <mat-menu #menu="matMenu" class="menu-list">
+      <button routerLink="/combustibles" routerLinkActive="active" mat-button>Combustibles</button>
+      <button routerLink="/vehiculo-marca" routerLinkActive="active" mat-button>Marcas</button>
+      <button routerLink="/vehiculo-tipo" routerLinkActive="active" mat-button>Tipos</button>
+      <button routerLink="/vehiculo-modelo" routerLinkActive="active" mat-button>Modelos</button>
+      <button routerLink="/vehiculo" routerLinkActive="active" mat-button>Vehiculos</button>
+    </mat-menu>
+    <button mat-button routerLink="/clientes">Clientes</button>
+
+    <button mat-button [matMenuTriggerFor]="rent" >Renta</button>
+    <mat-menu #rent="matMenu" class="menu-list">
+      <button routerLink="/combustibles" routerLinkActive="active" mat-button>Nueva Renta</button>
+      <button routerLink="/vehiculo-marca" routerLinkActive="active" mat-button>Devolución vehiculo</button>
+    </mat-menu>
+    <button mat-button routerLink="/combustibles">Reportes</button>
   </div>
   <div  class="end">
     <button *ngIf="!logged" mat-button>Iniciar sesión</button>

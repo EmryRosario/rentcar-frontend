@@ -28,6 +28,7 @@ export class CreateComponent implements OnInit {
   }
   save (event) {
     event.preventDefault();
+    console.log(this.brand)
     this.dialogRef.close({data: this.brand});
   }
 }

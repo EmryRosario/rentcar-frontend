@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Editar Marca de Vehiculo</h2>
+
+<mat-dialog-content>
+  <form class="edit-vehicle-type">
+    <mat-form-field>
+      <input  class="edit-vehicle-type-input" [(ngModel)]="vehicleType.description" name="description"  matInput placeholder="Descripcion" value="" required>
+    </mat-form-field>
+
+    <mat-select placeholder="Estado" [(ngModel)]="vehicleType.state" name="state">
+      <mat-option *ngFor="let state of [{name: 'Activo'}, {name: 'Inactivo'}]" [value]="state.name" required>
+        {{ state.name }}
+      </mat-option>
+    </mat-select>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions class="edit-vehicle-type-footer">
+    <button class="edit-vehicle-type" class="mat-raised-button" (click)="save($event)">Aceptar</button>
+</mat-dialog-actions>
+  
